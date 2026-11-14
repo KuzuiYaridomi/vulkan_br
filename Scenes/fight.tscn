@@ -1,0 +1,65 @@
+[gd_scene format=3 uid="uid://d152dnvk8moc0"]
+
+[ext_resource type="PackedScene" uid="uid://djt6xb3bifujt" path="res://All_Assets/Fight ring/arena.glb" id="1_f2wba"]
+[ext_resource type="PackedScene" uid="uid://dcs6mps3srywa" path="res://All_Assets/Fight ring/props/damaged_wall.glb" id="2_kbr77"]
+[ext_resource type="PackedScene" uid="uid://c817ljvoi6a1f" path="res://All_Assets/Fight ring/props/ramp_a.glb" id="3_624cx"]
+[ext_resource type="PackedScene" uid="uid://cv4qav1urmdap" path="res://All_Assets/Fight ring/props/stone_platform.glb" id="4_qsl88"]
+[ext_resource type="PackedScene" uid="uid://d1ni402ni4fpk" path="res://All_Assets/Fight ring/props/bomberman_spawner.glb" id="5_pdb0v"]
+[ext_resource type="PackedScene" uid="uid://fu8c006c006l" path="res://Scenes/Player.tscn" id="6_player"]
+[ext_resource type="PackedScene" uid="uid://b87e6t65yioby" path="res://All_Assets/Fight ring/props/stone_gateway.glb" id="6_qsl88"]
+[ext_resource type="Script" uid="uid://dv6owrmdehek" path="res://Scripts/arena_collision.gd" id="7_arenacol"]
+
+[node name="fight" type="Node3D" unique_id=2127839827]
+
+[node name="Sketchfab_Scene" parent="." unique_id=1687293762 instance=ExtResource("1_f2wba")]
+transform = Transform3D(77.576, 0, 0, 0, 34.632, 0, 0, 0, 80, 0.5994003, 0.14023209, 0.13246131)
+
+[node name="Sketchfab_Scene2" parent="." unique_id=45673572 instance=ExtResource("2_kbr77")]
+transform = Transform3D(1.9516131, 0, 0, 0, 1.1961772, 0, 0, 0, 0.6320403, -292.4899, 0.10736084, 266.99353)
+
+[node name="Sketchfab_Scene3" parent="." unique_id=1922668898 instance=ExtResource("2_kbr77")]
+transform = Transform3D(1.1865107, 0, 0, 0, 1.2162622, 0, 0, 0, 0.55413795, 419.6222, 0.10736084, -72.86108)
+
+[node name="Sketchfab_Scene9" parent="." unique_id=61874246 instance=ExtResource("2_kbr77")]
+transform = Transform3D(2.2563932, 0, 0, 0, 0.88359135, 0, 0, 0, 0.34566078, 411.76056, 0.10736084, 72.58137)
+
+[node name="Sketchfab_Scene6" parent="." unique_id=214860714 instance=ExtResource("2_kbr77")]
+transform = Transform3D(0.0054039103, 0, 0.28768152, 0, 0.81375855, 0, -0.6910259, 0, 0.0022497054, 87.71698, -5.67511, 259.26434)
+
+[node name="Sketchfab_Scene4" parent="." unique_id=1896319838 instance=ExtResource("2_kbr77")]
+transform = Transform3D(1.353314, 0, 0, 0, 0.64544845, 0, 0, 0, 0.32072198, 44.909378, 0.10736084, -173.12401)
+
+[node name="Sketchfab_Scene5" parent="." unique_id=689802297 instance=ExtResource("3_624cx")]
+transform = Transform3D(-0.8094868, 0, 0.020671416, 0, 0.43749046, 0, -0.029216427, 0, -0.5727339, 201.47794, 210.32782, 102.66895)
+
+[node name="ramp" type="Node3D" parent="." unique_id=1182345352]
+
+[node name="Sketchfab_Scene" parent="ramp" unique_id=1562752581 instance=ExtResource("3_624cx")]
+transform = Transform3D(-54.779552, 0, 2.1710427, 0, 30.803814, 0, -2.0699787, 0, -57.45409, -290.5979, -1.3329239, 128.59494)
+
+[node name="Sketchfab_Scene2" parent="ramp" unique_id=615488979 instance=ExtResource("4_qsl88")]
+transform = Transform3D(0.26222456, 0, 0, 0, 0.1887224, 0, 0, 0, 0.25091234, 283.06973, 13.029974, 284.8525)
+
+[node name="Sketchfab_Scene3" parent="ramp" unique_id=746709882 instance=ExtResource("5_pdb0v")]
+transform = Transform3D(0.28808284, 0, 0, 0, 0.95962507, 0, 0, 0, 0.273024, 283.28156, 17.909863, 284.15698)
+
+[node name="Sketchfab_Scene4" parent="ramp" unique_id=1752223669 instance=ExtResource("6_qsl88")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.5275904, 0, 1.7859001)
+
+[node name="ArenaCollision" type="Node" parent="." unique_id=1577317456]
+script = ExtResource("7_arenacol")
+targets = Array[NodePath]([NodePath("../Sketchfab_Scene"), NodePath("../Sketchfab_Scene2"), NodePath("../Sketchfab_Scene3"), NodePath("../Sketchfab_Scene4"), NodePath("../Sketchfab_Scene5"), NodePath("../Sketchfab_Scene6"), NodePath("../ramp/Sketchfab_Scene"), NodePath("../ramp/Sketchfab_Scene2")])
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="." unique_id=1223632654]
+transform = Transform3D(0.8660254, -0.25, 0.4330127, 0, 0.8660254, 0.5, -0.5, -0.4330127, 0.75, 0, 300, 0)
+shadow_enabled = true
+directional_shadow_max_distance = 2000.0
+
+[node name="Player" parent="." unique_id=1593878454 instance=ExtResource("6_player")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.6, 30, 0.13)
+
+[node name="Sketchfab_Scene7" parent="." unique_id=212644202 instance=ExtResource("6_qsl88")]
+transform = Transform3D(8.725396, 0, -27.963448, 0, 44.248005, 0, 7.1151648, 0, 34.29186, 139.60901, 22.886894, 131.60236)
+
+[node name="Sketchfab_Scene8" parent="." unique_id=841618615 instance=ExtResource("6_qsl88")]
+transform = Transform3D(11.232166, 0, 3.0355663, 0, 44.248005, 0, -0.7723845, 0, 44.143757, 90.569595, 22.886894, 401.91235)
